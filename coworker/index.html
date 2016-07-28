@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="cwrk">
+<head>
+    <meta name="viewport" initial-scale=1>
+    <link rel="stylesheet" type="text/css" href="CSS/main/outlining.css">    
+    <!---Firebase JS---> 
+    <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"> </script>
+    <script src="DB/firebase.js"></script>
+    <!---Bootstrap CSS--->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!--AngularJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.7/angular-route.js">
+
+    // AngularJS Code
+    <script src="app.js"></script>
+    <script src="JS/config.js"></script>
+    <script src="JS/controller.js"></script>
+    <script src="JS/services.js"></script>
+</head>
+<body ng-controller="cwrkCtrl">  
+    <div ng-include="'header.html'"></div>
+
+    <!--<div class="hdr row" ng-controller="hdrCtrl" ng-init="init()">
+        <div class="appLoader" ng-show="showDefaultApplicationLoader">
+        <img src="assets/homepage/loader.gif"  width="100px">
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <h2>Coworkers</h2>
+        </div>
+        <div class="col-md-6 col-lg-6">
+            <div class="logUp" >
+            <input id="usrNm" type="button" value="Login" ng-model="loginValue" ng-click="switchPanes()"/ > 
+            <input id="pwd"   type="button" value="Sign Up" ng-model="showSignUpForm" ng-click="showSignUpForm=!showSignUpForm" /> 
+            </div>    
+            
+            <div class="login" ng-show="showFields">
+            <input id="usrNm" type="text" ng-model="userName" placeholder="User Name">
+            <input id="pwd"   type="password" ng-model="passWord" placeholder="Password">  
+            <input id="log"   type="button" ng-model="submit" value="Login">
+            </div>
+
+            <div class="signUpForm" ng-show="showSignUpForm">
+                <table>
+                    <tr>
+                        <td> <input id="firstName" type="text" ng-model="user.firstName" placeholder="John"></td>
+                        <td> <input id="lastName" type="text"  ng-model="user.lastName" placeholder="Doe"></td>
+                    </tr>
+                    <tr>
+                         <td><input id="email" type="email"  ng-model="user.email" placeholder="john.doe@example.com"></td>
+                    </tr>
+                    <tr>
+                        <td> <input id="password" type="password" ng-model="user.password" placeholder="password"><//td>
+                    </tr>    
+                    <tr>
+                        <td> <input id="termsOfService" type="checkbox" ng-model="termsOfService"><span> I agree with Terms and Condition of Service</span></td>
+                    <tr>
+                        <td><input id="submit" type="button" value="Next" ng-click="userSignUp()"></td>
+                    </tr>
+                </table>
+            
+            </div>    
+        </div>
+    </div>  
+    -->
+    <div class="row" ng-view>
+        
+    </div>
+    
+     <div class="ftr row" ng-show>
+
+     </div> 
+
+</body>
+</html>

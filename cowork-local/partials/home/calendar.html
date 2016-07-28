@@ -1,0 +1,106 @@
+<div class="container-fluid" ng-controller="calendarController" ng-init="create()">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3">
+            <h3> New Booking </h3>
+            <table>
+                <tbody>
+                <tr>
+                    <td class="loginpanel newinput"> <input id="title" type="text" ng-model="bookings.title" placeholder="Meeting Title"> </td>
+                </tr>
+                <tr>
+                    <td class="loginpanel newinput"><input id="description" type="text" ng-model="bookings.description" placeholder="Add Description to the event"></td>
+                </tr>
+                <tr>
+                    <td class="loginpanel newinput"><input id="start-time" type="time" ng-model="bookings.startTime" placeholder="hh:mm"></td>
+                </tr>
+                <tr>
+                    <td class="loginpanel newinput"><input id="end-time" type="time" ng-model="bookings.endTime" placeholder="hh:mm"></td>
+                </tr>
+                <tr>
+                    <td class="loginpanel newinput">
+                        <select ng-model="bookings.resource">
+                            <option value="Conference Room">Conference Room </option>
+                            <option value="Meeting Room"> Meeting Room </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="loginpanel newinput"> 
+                        <input id="team-member" type="text" ng-model="bookings.teamMember" placeholder="John Doe">
+                    </td>
+                </tr>    
+                <tr>
+                    <td class="loginpanel newinput"><input id="nextstep" type="button" value="Create" ng-click="signUp()"></td>
+                </tr>
+                </tbody>    
+            </table>    
+        </div>
+        <div class="col-lg-7" >
+            <div class="row">
+                <div class="col-lg-3">     
+                <input class="calendar-view-switch-btn" type="button" value="Day" ng-model="day">
+                <input class="calendar-view-switch-btn" type="button" value="Week">
+                <input class="calendar-view-switch-btn" type="button" value="Month">
+                </div>
+                <div class="col-lg-7"></div>
+                <div class="col-lg-2"><span style="font-size:16px;font-weight:400"><input class="calendar-view-switch-btn" type="button" value="<" ng-click="monthChange(-1)">{{month.value}}<input class="calendar-view-switch-btn" type="button" value=">" ng-click="monthChange(1)"></span></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2" style="height:30px;">Monday</div>
+                <div class="col-lg-2" style="height:30px;">Tuesday</div>
+                <div class="col-lg-2" style="height:30px;">Wednesday</div>
+                <div class="col-lg-2" style="height:30px;">Thursday</div>
+                <div class="col-lg-2" style="height:30px;">Friday</div>
+                <div class="col-lg-1" style="height:30px;">Sat</div>
+                <div class="col-lg-1" style="height:30px;">Sun</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2" style="height:120px;">
+                    <h4>{{month.date[0][0]}}</h4></div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[0][1]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[0][2]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[0][3]}}</div>
+                <div class="col-lg-2" style="height:120px;"><h4>{{month.date[0][4]}}</h4></div>
+                <div class="col-lg-1" style="height:120px;">{{month.date[0][5]}}</div>
+                <div class="col-lg-1" style="height:120px;">{{month.date[0][6]}}</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2" style="height:120px;">{{month.date[1][0]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[1][1]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[1][2]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[1][3]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[1][4]}}</div>
+                <div class="col-lg-1" style="height:120px;">{{month.date[1][5]}}</div>
+                <div class="col-lg-1" style="height:120px;">{{month.date[1][6]}}</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2" style="height:120px;">{{month.date[2][0]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[2][1]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[2][2]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[2][3]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[2][4]}}</div>
+                <div class="col-lg-1" style="height:120px;">{{month.date[2][5]}}</div>
+                <div class="col-lg-1" style="height:120px;">{{month.date[2][6]}}</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2" style="height:120px;">{{month.date[3][0]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[3][1]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[3][2]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[3][3]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[3][4]}}</div>
+                <div class="col-lg-1" style="height:120px;">{{month.date[3][5]}}</div>
+                <div class="col-lg-1" style="height:120px;">{{month.date[3][6]}}</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2" style="height:120px;">{{month.date[4][0]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[4][1]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[4][2]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[4][3]}}</div>
+                <div class="col-lg-2" style="height:120px;">{{month.date[4][4]}}</div>
+                <div class="col-lg-1" style="height:120px;">{{month.date[4][5]}}</div>
+                <div class="col-lg-1" style="height:120px;">{{month.date[4][6]}}</div>
+            </div>
+        </div>
+    </div>
+</div>

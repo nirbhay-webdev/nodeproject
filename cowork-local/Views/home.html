@@ -1,0 +1,8 @@
+<div ng-include="'partials/sidemenu.html'"></div>
+
+<div ng-include="'partials/home/calendar.html'" ng-show="profile.viewStates.booking"></div>
+<div ng-include="'partials/home/profile.html'"  ng-show="profile.viewStates.profile"></div>
+<div ng-include="'partials/home/team.html'"     ng-show="profile.viewStates.team"></div>
+
+<div ng-include="'partials/home/invoices.html'" ng-show="profile.viewStates.invoices"></div>
+<div ng-include="'partials/home/payments.html'" ng-show="profile.viewStates.payments"></div>

@@ -1,0 +1,27 @@
+
+    <div class="row" ng-controller="coworkHeaderController" ng-init="initiator()">
+        <div class="col-lg-6"> 
+            <h1>Cowork</h1>
+        </div>
+        <div class="col-lg-6">
+            <table class="logintable">
+                <tbody>
+                    <tr>
+                        <td class="loginpanel" ng-show="loginPressed">
+                            <input id="userName"  type="text" ng-model="user.userName" placeholder="john@example.com">
+                        </td>
+                        <td class="loginpanel" ng-show="loginPressed">    
+                            <input id="password" type="password" ng-model="user.password" placeholder="password">
+                        </td>
+                        <td class="loginpanel">
+                            <input id="loginBtn"  type="button" value="Login" ng-click="loginuser()">
+                        </td>
+                        <td class="loginpanel">    
+                            <input id="signUpBtn" type="button" value="Sign Up" ng-click="showSignUpForn()">
+                        </td>
+                    </tr>
+                 </tbody>
+            </table>            
+        
+        </div>    
+    </div>
